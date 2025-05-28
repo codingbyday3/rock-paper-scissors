@@ -13,4 +13,5 @@ function getHumanChoice(){
 
   return userPlay
 }
-console.log(getHumanChoice())
+// console.log(getHumanChoice())
+
