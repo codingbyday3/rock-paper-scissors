@@ -12,6 +12,7 @@ function main(){
 
   }
 
+  console.log(selectWinner(humanScore, computerScore))
 }
 
 function getComputerChoice(){
@@ -55,6 +56,15 @@ function playRound(humanChoice, computerChoice){
   }
 }
 
+function selectWinner(humanScore, computerScore){
+  if (humanScore < computerScore){
+    return `You lost :(`
+  }
+  else if (humanScore > computerScore){
+    return `You won, congrats :)`
+  }
+
+}
 
 main()
 
