@@ -1,6 +1,18 @@
 humanScore = 0
 computerScore = 0
+round = 0
 
+function main(){
+
+  while(round < 5){
+    
+    console.log(playRound(getHumanChoice(), getComputerChoice()))
+    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
+    round += 1
+
+  }
+
+}
 
 function getComputerChoice(){
   randomNum = Math.floor(Math.random() * 3)
@@ -43,5 +55,7 @@ function playRound(humanChoice, computerChoice){
   }
 }
 
-console.log(playRound(getHumanChoice(), getComputerChoice()))
+
+main()
+
 
