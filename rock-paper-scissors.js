@@ -8,6 +8,7 @@ function main(){
     
     console.log(playRound(getHumanChoice(), getComputerChoice()))
     console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
+
     round += 1
 
   }
@@ -62,6 +63,9 @@ function selectWinner(humanScore, computerScore){
   }
   else if (humanScore > computerScore){
     return `You won, congrats :)`
+  }
+  else{
+    return "Game was tie"
   }
 
 }
