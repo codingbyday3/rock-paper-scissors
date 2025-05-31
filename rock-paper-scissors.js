@@ -4,9 +4,14 @@ round = 0
 
 function main(){
 
-    
-  console.log(playRound(getHumanChoice(), getComputerChoice()))
-  console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
+  const btns = document.querySelectorAll("button")
+
+  btns.forEach((btn) =>{
+    btn.addEventListener("click", (e) =>{
+      console.log(playRound(btn.value, getComputerChoice()))
+      console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
+    })
+  })
 
   console.log(selectWinner(humanScore, computerScore))
 }
@@ -19,14 +24,7 @@ function getComputerChoice(){
 
   return plays[randomNum]
 }
-// console.log(getComputerChoice())
 
-function getHumanChoice(){
-  userPlay = prompt("What is your move?")
-  console.log(`User: ${userPlay}`)
-  return userPlay
-}
-// console.log(getHumanChoice())
 
 function playRound(humanChoice, computerChoice){
   humanChoice = humanChoice.toLowerCase()
