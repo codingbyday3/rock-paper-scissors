@@ -5,11 +5,13 @@ round = 0
 function main(){
 
   const btns = document.querySelectorAll("button")
+  const roundWinnerPara = document.querySelector("#round-winner")
+  const scorePara = document.querySelector("#score")
 
   btns.forEach((btn) =>{
     btn.addEventListener("click", (e) =>{
-      console.log(playRound(btn.value, getComputerChoice()))
-      console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
+      roundWinnerPara.textContent = playRound(btn.value, getComputerChoice())
+      scorePara.textContent = `Your score: ${humanScore}, Computer score: ${computerScore}`
     })
   })
 
