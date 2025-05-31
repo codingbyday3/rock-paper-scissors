@@ -4,14 +4,9 @@ round = 0
 
 function main(){
 
-  while(round < 5){
     
-    console.log(playRound(getHumanChoice(), getComputerChoice()))
-    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
-
-    round += 1
-
-  }
+  console.log(playRound(getHumanChoice(), getComputerChoice()))
+  console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
 
   console.log(selectWinner(humanScore, computerScore))
 }
