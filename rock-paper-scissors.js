@@ -1,19 +1,12 @@
-humanScore = 0
-computerScore = 0
-round = 0
+let humanScore = 0
+let computerScore = 0
+let round = 0
 
 function main(){
 
   const btns = document.querySelectorAll("button")
-  const roundWinnerPara = document.querySelector("#round-winner")
-  const scorePara = document.querySelector("#score")
 
-  btns.forEach((btn) =>{
-    btn.addEventListener("click", (e) =>{
-      roundWinnerPara.textContent = playRound(btn.value, getComputerChoice())
-      scorePara.textContent = `Your score: ${humanScore}, Computer score: ${computerScore}`
-    })
-  })
+  btns.forEach((btn) => getScore(btn))
 
   console.log(selectWinner(humanScore, computerScore))
 }
@@ -62,6 +55,17 @@ function selectWinner(humanScore, computerScore){
   else{
     return "Game was tie"
   }
+
+}
+
+function getScore(btn){
+  const roundWinnerPara = document.querySelector("#round-winner")
+  const scorePara = document.querySelector("#score")
+
+  btn.addEventListener("click", () =>{
+      roundWinnerPara.textContent = playRound(btn.value, getComputerChoice())
+      scorePara.textContent = `Your score: ${humanScore}, Computer score: ${computerScore}`
+    })
 
 }
 
