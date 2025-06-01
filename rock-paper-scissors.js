@@ -8,7 +8,6 @@ function main(){
 
   btns.forEach((btn) => getScore(btn))
 
-  console.log(selectWinner(humanScore, computerScore))
 }
 
 function getComputerChoice(){
@@ -45,26 +44,48 @@ function playRound(humanChoice, computerChoice){
   }
 }
 
-function selectWinner(humanScore, computerScore){
+function selectWinner(){
+
+  let finalResult
+  
   if (humanScore < computerScore){
-    return `You lost :(`
+    
+    finalResult = `You lost :(`
   }
   else if (humanScore > computerScore){
-    return `You won, congrats :)`
+    finalResult = `You won, congrats :)`
   }
   else{
-    return "Game was tie"
+    finalResult = "Game was tie"
   }
+
+  humanScore = 0
+  computerScore = 0
+  round = 0
+
+  return finalResult
 
 }
 
 function getScore(btn){
   const roundWinnerPara = document.querySelector("#round-winner")
   const scorePara = document.querySelector("#score")
+  const div = document.querySelector("div")
+  const winnerIsPara = document.createElement("p")
 
   btn.addEventListener("click", () =>{
+  
       roundWinnerPara.textContent = playRound(btn.value, getComputerChoice())
       scorePara.textContent = `Your score: ${humanScore}, Computer score: ${computerScore}`
+
+      //naredi v if stavek da naredi nov p in notr napise rezultat
+      if(humanScore === 5 || computerScore === 5){
+        winnerIsPara.textContent = selectWinner()
+
+        div.appendChild(winnerIsPara)
+      }else{
+        winnerIsPara.remove()
+      }
     })
 
 }
