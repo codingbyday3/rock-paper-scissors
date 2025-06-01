@@ -53,13 +53,13 @@ function selectWinner(){
   
   if (humanScore < computerScore){
     
-    finalResult = `You lost :(`
+    finalResult = `You lost :(, click any button to restart`
   }
   else if (humanScore > computerScore){
-    finalResult = `You won, congrats :)`
+    finalResult = `You won, congrats :), click any button to restart`
   }
   else{
-    finalResult = "Game was tie"
+    finalResult = "Game was tie, click any button to restart"
   }
 
   humanScore = 0
