@@ -73,8 +73,10 @@ function selectWinner(){
 function getScore(btn){
   const roundWinnerPara = document.querySelector("#round-winner")
   const scorePara = document.querySelector("#score")
-  const div = document.querySelector("div")
+  const main = document.querySelector("main")
   const winnerIsPara = document.createElement("p")
+  winnerIsPara.className = "winner-is"
+
 
   btn.addEventListener("click", () =>{
   
@@ -85,7 +87,7 @@ function getScore(btn){
       if(humanScore === 5 || computerScore === 5){
         winnerIsPara.textContent = selectWinner()
 
-        div.appendChild(winnerIsPara)
+        main.insertBefore(winnerIsPara, main.firstChild)
       }else{
         winnerIsPara.remove()
       }
