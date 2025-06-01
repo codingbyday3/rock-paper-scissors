@@ -11,10 +11,13 @@ function main(){
 }
 
 function getComputerChoice(){
+
+  const computerChoicePara = document.querySelector("#computer-choice")
   randomNum = Math.floor(Math.random() * 3)
       
   plays = ["rock", "paper", "scissors"]
-  console.log(`Computer: ${plays[randomNum]}`)
+  computerChoicePara.textContent = `Computer: ${plays[randomNum]}`
+  
 
   return plays[randomNum]
 }
