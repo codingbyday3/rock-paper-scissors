@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif,'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212
+
+;
+  height: 100vh;
+}
+
+header h1{
+  text-align: center;
+  padding: 20px;
+  color: white;
+
+}
+
+main{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-container button{
+  width: 100px;
+  padding: 20px 0;
+  border: none;
+  background-color: rgb(0, 255, 81);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.btn-container button:hover{
+  opacity: 80%;
+  cursor: pointer;
+}
